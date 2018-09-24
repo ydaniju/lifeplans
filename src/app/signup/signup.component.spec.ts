@@ -1,9 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatInputModule,
   MatFormFieldModule,
+  MatIconModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -18,9 +19,11 @@ describe('SignupComponent', () => {
       declarations: [ SignupComponent ],
       imports: [
         FormsModule,
+        ReactiveFormsModule,
         MatButtonModule,
         MatInputModule,
         MatFormFieldModule,
+        MatIconModule,
         BrowserAnimationsModule,
       ]
     })

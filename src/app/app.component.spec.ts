@@ -1,9 +1,10 @@
 import { TestBed, async } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatInputModule,
   MatFormFieldModule,
+  MatIconModule,
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -22,6 +23,8 @@ describe('AppComponent', () => {
         MatInputModule,
         MatButtonModule,
         FormsModule,
+        ReactiveFormsModule,
+        MatIconModule,
         BrowserAnimationsModule
       ],
     }).compileComponents();
