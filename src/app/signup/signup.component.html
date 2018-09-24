@@ -8,7 +8,7 @@
         placeholder="Email"
         [formControl]="email"
         required>
-      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      <mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
     </mat-form-field>
 
     <mat-form-field class="example-full-width">
@@ -16,10 +16,18 @@
         matInput
         [type]="hide ? 'password' : 'text'"
         autocomplete="current-password"
-        placeholder="Password">
+        [formControl]="password"
+        placeholder="Password"
+        required>
       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
     </mat-form-field>
   
-    <button mat-raised-button color="primary">Signup</button>
+    <button
+      mat-raised-button
+      color="primary"
+      [disabled]="(email.invalid || password.invalid) ? true : false">
+        Signup
+    </button>
   </form>
 </div>

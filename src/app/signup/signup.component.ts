@@ -12,12 +12,20 @@ export class SignupComponent implements OnInit {
 
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  getErrorMessage() {
+  password = new FormControl('', [Validators.required, Validators.minLength(8)]);
+
+  getEmailErrorMessage() {
     return this.email.hasError('required') ? 'You must enter a value' :
       this.email.hasError('email') ? 'Not a valid email' :
         '';
   }
 
-  ngOnInit() {}
+  getPasswordErrorMessage() {
+    return this.password.hasError('required') ? 'You must enter a value' :
+      this.password.hasError('minlength') ? 'Password is too short' : '';
+  }
+
+  ngOnInit() {
+  }
 }
 
